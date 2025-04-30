@@ -1,0 +1,17 @@
+export const images = {
+    logo: require('./logo.svg'),
+    header: require('./header.png'),
+    face: require('./face.png'),
+    quote: require('./quote.png'),
+    agile: require('./agile.png'),
+    mobileapp: require('./mobileapp.png'),
+    hex1: require('./hex1.png'),
+    aboutusheader: require('./aboutheader.png'),
+    aboutfoot: require('./aboutfoot.png'),
+    missionstatement: require('./missionstatement.png'),
+    vision: require('./vision.png'),
+    initiative: require('./initiative.png'),
+    inovation: require('./inovation.png'),
+    inspiration: require('./inspiration.png'),
+    integrity: require('./integrity.png'),
+} 

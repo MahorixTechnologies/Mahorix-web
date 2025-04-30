@@ -1,0 +1,177 @@
+import { Layout } from "@/partials";
+import styles from './aboutus.module.scss'
+import { Flex } from "antd";
+import Image from "next/image";
+import { colors, images } from "@/assets";
+import { FloatingImage, MPaper, Text } from "@/components";
+import { BsDashLg } from "react-icons/bs";
+import { Box } from "@mui/material";
+import { FaArrowRightLong } from "react-icons/fa6";
+
+const circleImages = [
+  { text: <>  Front-End <br />   Developer </>, img: require("../../assets/images/Organization.png") },
+  { text: <>   Back-End <br />Developer </>, img: require("../../assets/images/Organization (1).png") },
+  { text: <>  QA <br /> Engineers </>, img: require("../../assets/images/Organization (2).png") },
+  { text: <>  UX  <br /> Designers </>, img: require("../../assets/images/Organization (3).png") },
+  { text: <> Project <br /> Managers </>, img: require("../../assets/images/Organization (4).png") }
+]
+const AboutCard = ({
+  src = '',
+  title, subtext,
+  width = 600, height = 314
+}) => {
+  return <MPaper elevation={6} height={height} width={width} radius={"25px"} >
+    <Flex vertical className="h-full" gap={30} align="center" justify="center">
+      <Image height={100} width={100} src={src} />
+      <Text type="h2">
+        {title}
+      </Text>
+      <Text className="!text-center max-w-[300px]" type="body">
+        {subtext}
+      </Text>
+    </Flex>
+  </MPaper>
+}
+
+function AboutUs() {
+  return (
+    <Layout className={styles.aboutus}>
+      <Flex className={styles.header} gap={80} align="center">
+        <div className="relative" >
+          <Image src={images.aboutusheader} />
+          <FloatingImage bottom={-100} right={-300}>
+            <div className={styles.message}>
+              <Text className="!text-justify" color="#00000080">
+                We want to build a world where great ideas,
+                products, and companies come to fruition
+                quickly whilst achieving the required impact.
+                Our work is to facilitate the process.
+              </Text>
+              <Text type="h6">
+                Kehinde Salaudeen
+              </Text>
+              <Text type="h6">
+                Mahorix
+              </Text>
+            </div>
+          </FloatingImage>
+        </div>
+        <div className="w-[50%] flex flex-col gap-8">
+          <Text className="flex" type="h1" color={colors.secondary1}>
+            <BsDashLg className="inline" /> WHO ARE WE <BsDashLg className="inline" />
+          </Text>
+          <Text color="#22282D" type="h3">Unleashing Potential Through IT and Education</Text>
+          <Text type="body" className="max-w-[400px] !text-justify">
+            Lorem Ipsum is simply dummy text of the printing and
+            industry. Lorem Ipsum has been the industry's standard
+            text ever since the 1500s, when an unknown printer took
+            of type and scrambled it to make a type specimen book.
+          </Text>
+        </div>
+      </Flex>
+
+      <Flex align="center" wrap justify="center" gap={50} style={{ minHeight: "500px" }}>
+        <AboutCard src={images.vision} title={"Vision Statement"} subtext={'To be a leading brand in providing learning solutions.'} />
+        <AboutCard src={images.missionstatement} title={"Mission Statement"} subtext={'To provide learning solutions, Deploying professional expertise and innovations.'} />
+      </Flex>
+      <Box display={'flex'} flexDirection={'column'} gap={10} my={"80px"} py={"50px"} position={'relative'}>
+        <FloatingImage src={images.hex1} left={"20%"} />
+        <Text color={colors.secondary1} className="!text-center" type="h1">Our Core Values</Text>
+        <Flex wrap align="center" justify="center" gap={50} style={{ minHeight: "500px", width: "70%", margin: 'auto', marginTop: "80px" }}>
+          <AboutCard src={images.vision} title={"INITIATIVE"} width={"45%"} />
+          <AboutCard src={images.missionstatement} title={"INNOVATION"} width={"45%"} />
+          <AboutCard src={images.vision} title={"INSPIRATION"} width={"45%"} />
+          <AboutCard src={images.missionstatement} title={"INTEGRITY "} width={"45%"} />
+
+          {/* <FloatingImage src={images.hex1} left={"20%"} /> */}
+        </Flex>
+        <FloatingImage src={images.hex1} left={"20%"} bottom={-100} />
+        <FloatingImage src={images.hex1} right={"14%"} bottom={200} zi={-1} />
+      </Box>
+
+      <MPaper elevation={6} radius={"35px"} width={"90%"} center height={270} sx={{ m: '80px auto', position: 'relative' }} >
+        <Box position={"absolute"} height={"100%"} width={"100%"} display={'flex'} justifyContent={'center'} alignItems={"center"}>
+          <Text weight={600} color={colors.tetiary1} size={"150px"}> M I L E S T O N E S</Text>
+        </Box>
+        <Flex className="relative z-[100] w-full px-5" justify="space-evenly">
+          <Flex vertical gap={40} align="center" >
+            <Text color={colors.secondary1} size={'64px'}>
+              +3
+            </Text>
+            <Text color={colors.secondary1} type="h2">
+              Years of experience
+            </Text>
+          </Flex>
+          <Flex vertical gap={40} align="center">
+            <Text color={colors.secondary1} size={'64px'}>
+              +69
+            </Text>
+            <Text color={colors.secondary1} type="h2">
+              Projects Completed
+            </Text>
+          </Flex>
+          <Flex vertical gap={40} align="center">
+            <Text color={colors.secondary1} size={'64px'}>
+              +25
+            </Text>
+            <Text color={colors.secondary1} type="h2">
+              Total Trained
+            </Text>
+          </Flex>
+          <Flex vertical gap={40} align="center">
+            <Text color={colors.secondary1} size={'64px'}>
+              100%
+            </Text>
+            <Text color={colors.secondary1} type="h2">
+              Customer Satisfaction
+            </Text>
+          </Flex>
+
+        </Flex>
+      </MPaper>
+
+      <div style={{ height: '600px' }} className="justify-center !relative">
+
+        <FloatingImage src={images.hex1} left={"23%"} top={"250px"} zi={-10} />
+        <FloatingImage src={images.hex1} right={"20%"} top={"250px"} zi={-10} />
+        {
+          circleImages.map((img, i) => {
+            return (
+              <div className="text-center" style={{
+                position: 'absolute', left: `${30 + (i * 11)}%`,
+                top: "50%", zIndex: 100,
+                transform: `translate(-${30 + (i * 11)}%, -50%)`
+              }}>
+                <Image
+                  src={img.img}
+                  style={{
+                    height: '209px',
+                    width: '209px',
+                  }} />
+                <Text>
+                  {img.text}
+                </Text>
+              </div>
+            )
+          })
+        }
+        <Text type="h1" color={colors.secondary1}
+          sx={{ transform: `translate(-50%, 0%)` }}
+          className=" translate-[-50%,-50%] !absolute !bottom-20 left-[50%]">Meet the team</Text>
+      </div>
+
+      <div className={styles.aboutBottom}>
+        <Text type="h1" color={colors.white} className="!w-[50%] ">
+          Secure the future of your company <br />
+          with MAHORIX
+        </Text>
+        <div className={styles.circle}>
+          <FaArrowRightLong color={colors.white} size={30} />
+        </div>
+      </div>
+
+    </Layout>
+  )
+}
+
+export default AboutUs;
