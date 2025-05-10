@@ -62,10 +62,7 @@ function AboutUs() {
           </Text>
           <Text color="#22282D" type="h3">Unleashing Potential Through IT and Education</Text>
           <Text type="body" className="max-w-[400px] !text-justify">
-            Lorem Ipsum is simply dummy text of the printing and
-            industry. Lorem Ipsum has been the industry's standard
-            text ever since the 1500s, when an unknown printer took
-            of type and scrambled it to make a type specimen book.
+        We are educators and tech innovators empowering individuals and businesses with digital skills and solutions. From learning to deployment, we help you thrive, compete, and lead in Africa’s growing digital economy.  
           </Text>
         </div>
       </Flex>
@@ -78,10 +75,10 @@ function AboutUs() {
         <FloatingImage src={images.hex1} left={"20%"} />
         <Text color={colors.secondary1} className="!text-center" type="h1">Our Core Values</Text>
         <Flex wrap align="center" justify="center" gap={50} style={{ minHeight: "500px", width: "70%", margin: 'auto', marginTop: "80px" }}>
-          <AboutCard src={images.vision} title={"INITIATIVE"} width={"45%"} />
-          <AboutCard src={images.missionstatement} title={"INNOVATION"} width={"45%"} />
-          <AboutCard src={images.vision} title={"INSPIRATION"} width={"45%"} />
-          <AboutCard src={images.missionstatement} title={"INTEGRITY "} width={"45%"} />
+          <AboutCard src={images.vision} title={"INITIATIVE"} width={"45%"} subtext={'We lead with intention. We take proactive steps toward solving problems, creating opportunities, and making a difference. We are driven by purpose and fueled by a desire to create lasting impact.'} />
+          <AboutCard src={images.missionstatement} title={"INNOVATION"} width={"45%"} subtext={'We think differently. By embracing creativity and curiosity, we turn struggles into opportunities and ideas into impactful solutions.'} />
+          <AboutCard src={images.vision} title={"INSPIRATION"} width={"45%"} subtext={'We lead by example and spark possibility. Through our actions, passion, and purpose, we empower others to dream bigger, do better, and become more.'} />
+          <AboutCard src={images.missionstatement} title={"INTEGRITY "} width={"45%"} subtext={'We deliver on our promise. You can count on us to follow through on our commitments while upholding consistent and uncompromising adherence to strong ethical principles and values.'} />
 
           {/* <FloatingImage src={images.hex1} left={"20%"} /> */}
         </Flex>
@@ -104,7 +101,7 @@ function AboutUs() {
           </Flex>
           <Flex vertical gap={40} align="center">
             <Text color={colors.secondary1} size={'64px'}>
-              +69
+              +9
             </Text>
             <Text color={colors.secondary1} type="h2">
               Projects Completed
@@ -112,7 +109,7 @@ function AboutUs() {
           </Flex>
           <Flex vertical gap={40} align="center">
             <Text color={colors.secondary1} size={'64px'}>
-              +25
+              +20
             </Text>
             <Text color={colors.secondary1} type="h2">
               Total Trained
@@ -130,7 +127,7 @@ function AboutUs() {
         </Flex>
       </MPaper>
 
-      <div style={{ height: '600px' }} className="justify-center !relative">
+      {/* <div style={{ height: '600px' }} className="justify-center !relative">
 
         <FloatingImage src={images.hex1} left={"23%"} top={"250px"} zi={-10} />
         <FloatingImage src={images.hex1} right={"20%"} top={"250px"} zi={-10} />
@@ -158,7 +155,7 @@ function AboutUs() {
         <Text type="h1" color={colors.secondary1}
           sx={{ transform: `translate(-50%, 0%)` }}
           className=" translate-[-50%,-50%] !absolute !bottom-20 left-[50%]">Meet the team</Text>
-      </div>
+      </div> */}
 
       <div className={styles.aboutBottom}>
         <Text type="h1" color={colors.white} className="!w-[50%] ">

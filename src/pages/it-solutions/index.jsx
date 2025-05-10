@@ -35,9 +35,7 @@ const ItSolutions = () => {
             <Container component={Box} margin={0} maxWidth="xl" className='h-[700px] items-center !justify-evenly flex' >
                 <div className='w-[60%] block '>
                     <Text type='h1' block textAlign={'justify'} className='text-justify'>
-                        "We drive innovation with tailored tech solutions,
-                        empowering businesses to navigate and thrive
-                        in the evolving digital landscape."
+                        " At Mahorix, we provide tailored IT solutions that help individuals, startups, and established businesses optimize operations, boost productivity, and stay secure in the ever-evolving digital world. From infrastructure setup to ongoing support, our services are designed to meet the dynamic needs of today’s technology-driven enterprises."
                     </Text>
                 </div>
                 <Image src={require('@/assets/images/itheader.png')} className='w-[40%] !h-[640px]' />
@@ -79,7 +77,8 @@ const ItSolutions = () => {
                         Cybersecurity
                     </Text>
                     <Text type='body'>
-                        Boost efficiency with our cutting-edge ERP solutions. Elevate decision-making and productivity with tailored insights, perfectly aligned with your industry and organizational needs.
+                        {/* Boost efficiency with our cutting-edge ERP solutions. Elevate decision-making and productivity with tailored insights, perfectly aligned with your industry and organizational needs. */}
+                        Security audits, firewall configuration, endpoint protection, and threat monitoring. Our cybersecurity services are designed to protect your business from evolving threats, ensuring data integrity and operational continuity.
                     </Text>
                     <Image src={ArrowRight} className='self-end mt-[80px]' />
                 </Flex>
@@ -88,7 +87,8 @@ const ItSolutions = () => {
                         Cloud Services
                     </Text>
                     <Text type='body'>
-                        Nurture connections with our CRM. Understand behavior, personalize interactions, and boost sales. Our tools empower exceptional customer experiences for business success
+                        {/* Nurture connections with our CRM. Understand behavior, personalize interactions, and boost sales. Our tools empower exceptional customer experiences for business success */}
+                        Our cloud services include scalable storage solutions, virtual servers, and seamless migration support. We ensure your business leverages the full potential of cloud technology, enhancing flexibility, collaboration, and cost-efficiency.
                     </Text>
                     <Image src={ArrowRight} className='self-end mt-[80px]' />
                 </Flex>
@@ -97,11 +97,11 @@ const ItSolutions = () => {
                         Custom IT Solutions
                     </Text>
                     <Text type='body'>
-                        At the core of success lies your people. Simplify HR processes with our services, from recruitment to payroll. Empower your workforce, enhancing organizational efficiency seamlessly.
+                        Remote and on-site technical support, system upgrades, and troubleshooting At Mahorix, we offer remote and on-site technical support, system upgrades, and troubleshooting services.
+                         {/* Our team ensures your IT infrastructure remains robust, up-to-date, and seamlessly operational, minimizing downtime and maximizing efficiency. */}
                     </Text>
                     <Image src={ArrowRight} className='self-end mt-[80px]' />
                 </Flex>
-
             </Container>
             <Box className={styles.ourwork}>
                 <Flex vertical gap={"30px"} className='w-[50%]'>
@@ -115,7 +115,6 @@ const ItSolutions = () => {
                         View Projects</Button>
                 </Flex>
                 <Flex component={Box} style={{ backgroundColor: "white", }} className='shadow  max-w-[530px] rounded-[24px] !p-[50px] flex flex-col justify-center ' vertical gap={"30px"}>
-
                     <Text type='h2' color={colors.secondary1} block>
                         Technology
                     </Text>
@@ -124,7 +123,6 @@ const ItSolutions = () => {
                             "We drive innovation with tailored solutions, empowering businesses to excel in the evolving tech landscape."
                         </Text> <Image src={ArrowRight} />
                     </Box>
-
                 </Flex>
             </Box>
             <MPaper elevation={6} radius={"35px"} width={"90%"} center height={270} sx={{ m: '80px auto', position: 'relative' }} >
@@ -148,14 +146,6 @@ const ItSolutions = () => {
                             Projects Completed
                         </Text>
                     </Flex>
-                    {/* <Flex vertical gap={40} align="center">
-                        <Text color={colors.secondary1} size={'64px'}>
-                          +25
-                        </Text>
-                        <Text color={colors.secondary1} type="h2">
-                          Total Trained
-                        </Text>
-                      </Flex> */}
                     <Flex vertical gap={40} align="center">
                         <Text color={colors.secondary1} size={'64px'}>
                             100%
@@ -164,7 +154,6 @@ const ItSolutions = () => {
                             Customer Satisfaction
                         </Text>
                     </Flex>
-
                 </Flex>
             </MPaper>
             <Box className={styles.expertise}>
