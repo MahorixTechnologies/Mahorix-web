@@ -35,7 +35,9 @@ const ItSolutions = () => {
             <Container component={Box} margin={0} maxWidth="xl" className='h-[700px] items-center !justify-evenly flex' >
                 <div className='w-[60%] block '>
                     <Text type='h1' block textAlign={'justify'} className='text-justify'>
-                        " At Mahorix, we provide tailored IT solutions that help individuals, startups, and established businesses optimize operations, boost productivity, and stay secure in the ever-evolving digital world. From infrastructure setup to ongoing support, our services are designed to meet the dynamic needs of today’s technology-driven enterprises."
+"We drive innovation with tailored tech solutions,
+empowering businesses to navigate and thrive
+in the evolving digital landscape."
                     </Text>
                 </div>
                 <Image src={require('@/assets/images/itheader.png')} className='w-[40%] !h-[640px]' />
@@ -51,10 +53,8 @@ const ItSolutions = () => {
                         One Solution at a Time.
                     </Text>
                     <Text type='body' block textAlign={'justify'} w='70%' className='text-justify'>
-                        Lorem Ipsum is simply dummy text of the printing and
-                        industry. Lorem Ipsum has been the industry's standard
-                        text ever since the 1500s, when an unknown printer took
-                        of type and scrambled it to make a type specimen book.
+                      At Mahorix, we provide tailored IT solutions that help individuals, startups, and established businesses optimize operations, boost productivity, and stay secure in the ever-evolving digital world. From infrastructure setup to ongoing support, our services are designed to meet the dynamic needs of today’s technology-driven enterprises.
+
 
 
                     </Text>

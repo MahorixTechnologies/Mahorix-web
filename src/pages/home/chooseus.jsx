@@ -17,7 +17,8 @@ const Chooseus = () => {
                         Collaborative Approach, <br /> Transparent Communication:
                     </Text>
                     <Text type='body' color='#525252'>
-                        We believe in working hand-in-hand with our clients.
+                       We work side-by-side with our clients, building trust through open communication and shared vision every step of the way.
+
                     </Text>
                 </MPaper>
                 <MPaper width={'30%'} bgcolor='linear-gradient(232.88deg, #0072BC 28.46%, #8ED8F8 162.02%)'
@@ -34,7 +35,8 @@ const Chooseus = () => {
                         Expertise Across the Tech <br /> Spectrum
                     </Text>
                     <Text type='body'>
-                        Our team consists of seasoned developers, designers, and experts who excel in various areas of technology.
+                        {/* Our team consists of seasoned developers, designers, and experts who excel in various areas of technology. */}
+                        From development to design, our diverse team brings deep expertise across the tech landscape to bring your ideas to life.
                     </Text>
                 </MPaper>
             </div>

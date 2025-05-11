@@ -6,6 +6,26 @@
     justify-content: space-between;
     display: flex;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    img {
+        width: 140px;
+    }
+
+    // border-bottom: .1px solid grey;
+    @media screen and (max-width: 768px) {
+        padding: 10px 20px;
+        height: 90px;
+
+        img {
+            width: 100px;
+        }
+
+    }
 
     .nav {
         background-color: colors.$tetiary1;
@@ -24,11 +44,39 @@
             &:hover {
                 color: colors.$main1;
             }
-          
+
         }
+
         .selected {
             color: colors.$main1;
         }
 
+        @media screen and (max-width: 768px) {
+            display: none;
+
+        }
+    }
+
+    .btns {
+        @media screen and (max-width: 768px) {
+            display: none !important;
+        }
+    }
+
+    .hamburger {
+        display: none !important;
+
+        @media screen and (max-width: 768px) {
+            display: flex !important;
+            cursor: pointer;
+            height: 35px;
+            width: 35px;
+            // display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: colors.$secondary1;
+            color: white;
+            border-radius: 8px;
+        }
     }
 }

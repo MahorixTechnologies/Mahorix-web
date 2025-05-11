@@ -27,7 +27,8 @@ const Footer = () => {
 
 
             </div>
-            <div className={styles.company}>
+           <div className=' flex items-start gap-[50px] mt-6 '>
+             <div className={styles.company}>
                 <Text type='h5' color={colors.secondary1}>
                     Company
                 </Text>
@@ -56,6 +57,8 @@ const Footer = () => {
 
 
             </div>
+            
+           </div>
             <div className={styles.subscribe}>
                 <div className='w-[80%] flex flex-col gap-3 h-[85%] items-start justify-center'>
                     <Text color={colors.secondary1} type='h5'>
@@ -78,8 +81,9 @@ const Footer = () => {
         <Divider   />
         <div className={styles.footerBottom}>
             <div className={styles.copyright}>
-                <Text type='body2' color={colors.grey}>
-                    Copyright 2025. MAHORIX TECHNOLOGIES. All Rights Reserved.
+                <Text type='body2' color={colors.grey} className='text-center'>
+                    Copyright 2025. MAHORIX TECHNOLOGIES. 
+        All Rights Reserved.
                 </Text>
             </div>
             <div className={styles.termsPrivacyCookie}>

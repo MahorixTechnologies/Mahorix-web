@@ -9,6 +9,7 @@ import { BsChevronRight } from 'react-icons/bs'
 import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
 import styles from './edutech.module.scss'
 
+
 const TestimonyCard = ({
   text, person, position
 }) => {
@@ -33,36 +34,74 @@ const TestimonyCard = ({
 }
 
 const Edutech = () => {
+  const scrollToRef = React.useRef(null)
   return (
     <Layout>
       <Container maxWidth='xl' justify='space-between' component={Flex} align='center' className='min-h-[300px]'>
-        <div>
+        <div className='flex flex-col gap-[60px]'>
           <Text type='h1' lh='60px' className='max-w-[500px]'>
-            Hello friends, <br />
-            I am Faysal and we want to <br /> start a <span className='text-[#00AEEF]'>web design</span> course <br /> together. Do you like it too ?
+            Welcome to Mahorix EduTech, <br />
+            Your gateway to <span className='text-[#00AEEF]'>learning</span> and <br /> professional growth.
           </Text>
-          <Button >
-            Start Course Now
+        <Button onClick={() => window.scrollTo({ top: scrollToRef.current?.offsetTop, behavior: 'smooth' })}>
+            Start Learning Now
           </Button>
         </div>
-        <Image src={require('@/assets/images/eduheader.png')} />
+        <Image src={require('@/assets/images/edutechheader.png')} />
       </Container>
       <Box className='flex justify-center text-center my-5 '>
         <Text type='h1' className='capitalize' align='center' lh='50px'>
-          Search Among <span className='text-[#00AEEF]'>5000</span> courses and <br />find your favorite course
+          Search Among <span className='text-[#00AEEF]'>6</span> courses and <br />find your favorite course
         </Text>
       </Box>
 
-      <Container maxWidth='xl' className='flex flex-col'>
+      <Container maxWidth='xl' className='flex flex-col' >
         <Flex justify='space-between' className='!my-[60px]'>
           <Text className='uppercase' type='h4'>New courses</Text>
         </Flex>
-        <Flex component={Container} maxWidth='lg' gap={'30px'} className='mx-auto' wrap>
-          <CourseCard />
-          <CourseCard />
-          <CourseCard />
-          <CourseCard />
-          <CourseCard />
+        <Flex ref={scrollToRef} component={Container} maxWidth='lg' gap={'30px'} className='mx-auto' wrap>
+          <CourseCard
+            image={require('@/assets/images/backendcourse.png')}
+            name='Backend development'
+            tools='Java/Springboot, Python/Django, Node/NestJs, C#/.Net.'
+            lessons='6'
+            students='20'
+          />
+          <CourseCard
+            name='Frontend development'
+            tools='React, Angular, Vue.js, Svelte'
+            lessons='8'
+            students='25'
+            image={require('@/assets/images/frontendcourse.webp')}
+          />
+          <CourseCard
+            name='Data Science'
+            tools='Python, R, SQL, TensorFlow'
+            lessons='10'
+            students='30'
+            image={require('@/assets/images/datascience.jpeg')}
+          />
+          <CourseCard
+            name='Mobile Development'
+            tools='Flutter, React Native '
+            lessons='7'
+            students='15'
+            image={require('@/assets/images/mobiledevelopment.jpg')}
+          />
+          <CourseCard
+            name='UI/UX Design'
+            tools='Figma, Adobe XD, Sketch'
+            lessons='5'
+            students='18'
+            image={require('@/assets/images/figma.png')}
+          />
+          <CourseCard
+            name='Database Management'
+            tools='MySQL, PostgreSQL, MongoDB, Oracle'
+            lessons='9'
+            students='22'
+            image={require('@/assets/images/dbsm.webp')}
+          />
         </Flex>
       </Container>
 

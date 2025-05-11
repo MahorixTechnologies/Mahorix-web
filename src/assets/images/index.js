@@ -1,17 +1,33 @@
+import logo from './logo.svg';
+import header from './header.png';
+import face from './face.png';
+import quote from './quote.png';
+import agile from './agile.png';
+import mobileapp from './mobileapp.png';
+import hex1 from './hex1.png';
+import aboutusheader from './aboutheader.png';
+import aboutfoot from './aboutfoot.png';
+import missionstatement from './missionstatement.png';
+import vision from './vision.png';
+import initiative from './initiative.png';
+import inovation from './inovation.png';
+import inspiration from './inspiration.png';
+import integrity from './integrity.png';
+
 export const images = {
-    logo: require('./logo.svg'),
-    header: require('./header.png'),
-    face: require('./face.png'),
-    quote: require('./quote.png'),
-    agile: require('./agile.png'),
-    mobileapp: require('./mobileapp.png'),
-    hex1: require('./hex1.png'),
-    aboutusheader: require('./aboutheader.png'),
-    aboutfoot: require('./aboutfoot.png'),
-    missionstatement: require('./missionstatement.png'),
-    vision: require('./vision.png'),
-    initiative: require('./initiative.png'),
-    inovation: require('./inovation.png'),
-    inspiration: require('./inspiration.png'),
-    integrity: require('./integrity.png'),
-} 
+    logo,
+    header,
+    face,
+    quote,
+    agile,
+    mobileapp,
+    hex1,
+    aboutusheader,
+    aboutfoot,
+    missionstatement,
+    vision,
+    initiative,
+    inovation,
+    inspiration,
+    integrity,
+};
