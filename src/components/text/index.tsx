@@ -2,6 +2,7 @@ import { SxProps, Typography, TypographyProps } from '@mui/material'
 import React, { ReactNode } from 'react'
 import styles from './text.module.scss'
 import Link from 'next/link'
+import { useDeviceSize } from '@/hooks'
 
 type type = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "subtitle" | "subtitle2" | "body" | "body2";
 
@@ -22,9 +23,9 @@ interface TextProps extends TypographyProps {
     sx?: SxProps;
 }
 export const Text = ({ children, type = 'body', block, align = 'left', isLink = false, href = '', color = 'black', w, size = 'auto', weight, lh, className, sx, ...props }: TextProps) => {
-    // const comp = href ? 'Link' : 'p'
-    // console.log({ href, comp })
+
     const componentProp = href ? { href, component: href ? Link : 'p' } : {}
+    const { isMobile } = useDeviceSize()
     return (
         <Typography
             {...componentProp}
@@ -34,7 +35,7 @@ export const Text = ({ children, type = 'body', block, align = 'left', isLink = 
                 cursor: isLink ? 'pointer' : 'auto',
                 color,
                 width: w || 'auto',
-                fontSize: `${size} !important`,
+                fontSize: `${isMobile ? `${(parseInt(size as string) * .77)}px` : size} !important`,
                 fontWeight: `${weight} !important`,
                 lineHeight: `${lh} !important`,
                 ...sx

@@ -18,7 +18,7 @@ const ContactUs = () => {
         <Text type='h1' color={colors.secondary1}>
           Contact Us
         </Text>
-        <Text type='h2' color={colors.tetiary1}>
+        <Text type='h3' align='center' color={colors.main1} >
           Any question or remarks? Just write us a message!
         </Text>
       </div>
@@ -53,12 +53,12 @@ const ContactUs = () => {
         </div>
         <Flex vertical gap={'60px'} className={' ' + styles.right} >
           <Flex wrap gap={'40px'} className='w-full'>
-            <Input rootClass={"w-[45%]"} label='First Name' />
-            <Input rootClass={"w-[45%]"} label='Last Name' />
+            <Input rootClass={"flex-[45%]"} label='First Name' />
+            <Input rootClass={"flex-[45%]"} label='Last Name' />
           </Flex>
           <Flex wrap gap={'40px'} className='w-full'>
-            <Input rootClass={"w-[45%]"} label='Email' />
-            <Input rootClass={"w-[45%]"} label='Phone Number' />
+            <Input rootClass={"flex-[45%]"} label='Email' />
+            <Input rootClass={"flex-[45%]"} label='Phone Number' />
           </Flex>
 
           <TextArea rootClass={"w-[100%]"}

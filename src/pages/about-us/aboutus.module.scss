@@ -5,6 +5,23 @@
         background: linear-gradient(180deg, #8ED8F8 0%, #E1F4FD 100%);
         padding: 50px;
 
+        .whoarewe{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            @media screen and (max-width: 480px) {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            height: auto;
+              padding: 50px 20px;
+
+        }
+
         .message {
             background: #E1F3F7;
             width: 448px;
@@ -14,6 +31,15 @@
             flex-direction: column;
             padding: 40px;
             gap: 15px;
+
+            @media screen and (max-width: 768px) {
+                height: auto;
+                   width: 100%;
+                   display: none;
+            height: auto;
+                     padding: 10px;
+
+            }
 
         }
     }

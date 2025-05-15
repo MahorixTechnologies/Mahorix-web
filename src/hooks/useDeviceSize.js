@@ -5,9 +5,17 @@ const useDeviceSize = () => {
         width: 0,
         height: 0,
     });
+    const [isMobile, setIsMobile] = useState(size.width < 768);
+    // const breakPoints = {
+    //     'sm': 640,
+    //     'md': 768,
+    //     'lg': 1024,
+    //     'xl': 1280
+    // }
 
     useEffect(() => {
         const handleResize = () => {
+            setIsMobile(window.innerWidth < 640);
             setSize({
                 width: window.innerWidth,
                 height: window.innerHeight,
@@ -23,7 +31,7 @@ const useDeviceSize = () => {
         };
     }, []);
 
-    return size;
+    return { ...size, isMobile };
 };
 
 export { useDeviceSize };

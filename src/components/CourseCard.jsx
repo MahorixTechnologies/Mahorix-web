@@ -13,7 +13,7 @@ const CourseCard = ({
     image
 }) => {
     return (
-        <Card sx={{ borderRadius: "12px", height: "430px", p: "10px", width: "360px", border: "1px solid #F1F1F1", backgroundColor: '#FAFAFA', }} className='flex flex-col justify-evenly shadow' >
+        <Card sx={{ borderRadius: "12px", height: "430px", p: "10px", width: { xs: '100%', md: "360px" }, border: "1px solid #F1F1F1", backgroundColor: '#FAFAFA', }} className='flex flex-col justify-evenly shadow' >
             <Image src={image} className='rounded-[12px] !h-[250px] w-[100%]' />
             <div className='my-3' >
                 <Text type='h5'>{name}</Text>
