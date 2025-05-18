@@ -1,5 +1,6 @@
+'use client'
 import { Box, Container } from '@mui/material'
-import { Flex } from 'antd'
+import { Flex } from 'antd/lib'
 import Image from 'next/image'
 import { BsDashLg } from 'react-icons/bs'
 import { colors, images } from '@/assets'
@@ -14,13 +15,21 @@ import { FaArrowRightLong } from 'react-icons/fa6'
 import Transform from '../home/transform'
 import { useDeviceSize } from '@/hooks'
 
-const circleImages = [
-    { text: <>  Front-End <br />   Developer </>, img: require("../../assets/images/Organization.png") },
-    { text: <>   Back-End <br />Developer </>, img: require("../../assets/images/Organization (1).png") },
-    { text: <>  QA <br /> Engineers </>, img: require("../../assets/images/Organization (2).png") },
-    { text: <>  UX  <br /> Designers </>, img: require("../../assets/images/Organization (3).png") },
-    { text: <> Project <br /> Managers </>, img: require("../../assets/images/Organization (4).png") }
-]
+// Import images at the top of the file:
+import itHeaderImg from '@/assets/images/itheader.png'
+import galleryImg from '@/assets/images/gallery.png'
+import googleImg from '@/assets/images/google.png'
+import amazonShoppingImg from '@/assets/images/amazon-shopping-app.png'
+import nikonImg from '@/assets/images/nikon.png'
+import fedexImg from '@/assets/images/fedex.png'
+
+// const circleImages = [
+//     { text: <>  Front-End <br />   Developer </>, img: require("../../assets/images/Organization.png") },
+//     { text: <>   Back-End <br />Developer </>, img: require("../../assets/images/Organization (1).png") },
+//     { text: <>  QA <br /> Engineers </>, img: require("../../assets/images/Organization (2).png") },
+//     { text: <>  UX  <br /> Designers </>, img: require("../../assets/images/Organization (3).png") },
+//     { text: <> Project <br /> Managers </>, img: require("../../assets/images/Organization (4).png") }
+// ]
 const ItSolutions = () => {
     const settings = {
         dots: false,
@@ -28,6 +37,7 @@ const ItSolutions = () => {
         speed: 500,
     };
     const { isMobile } = useDeviceSize()
+
 
     return (
         <Layout>
@@ -40,11 +50,11 @@ const ItSolutions = () => {
                     </Text>
                 </Box>
 
-                <Image src={require('@/assets/images/itheader.png')} className='mx-auto !h-[640px]' style={{ flex: '36%', width: 'min(400px,100%)' }} />
+                <Image src={itHeaderImg} className='mx-auto !h-[640px]' style={{ flex: '36%', width: 'min(400px,100%)' }} />
 
             </Container>
             <Box component={Flex} wrap margin={0} sx={{ flexDirection: { xs: 'column', md: 'row' }, py: { xs: '100px', lg: '20px' }, gap: { xs: '150px', lg: 0 } }} className={styles.whatwedo} >
-                <Image src={require('@/assets/images/gallery.png')} className=' !h-[640px]' style={{ flex: 1 }} />
+                <Image src={galleryImg} className=' !h-[640px]' style={{ flex: 1 }} />
                 <div className=' flex flex-col gap-3 ' style={{ flex: 1 }}>
                     <Text type='h3' color={colors.secondary1} block textAlign={'justify'} className='text-justify !flex'>
                         <BsDashLg width={'50px'} />     What We Do<BsDashLg />
@@ -55,9 +65,6 @@ const ItSolutions = () => {
                     </Text>
                     <Text type='body' block textAlign={'justify'} w={{ xs: '100%', lg: '70%' }} className='text-justify'>
                         At Mahorix, we provide tailored IT solutions that help individuals, startups, and established businesses optimize operations, boost productivity, and stay secure in the ever-evolving digital world. From infrastructure setup to ongoing support, our services are designed to meet the dynamic needs of today’s technology-driven enterprises.
-
-
-
                     </Text>
                 </div>
             </Box>
@@ -78,7 +85,6 @@ const ItSolutions = () => {
                         Cybersecurity
                     </Text>
                     <Text type='body'>
-                        {/* Boost efficiency with our cutting-edge ERP solutions. Elevate decision-making and productivity with tailored insights, perfectly aligned with your industry and organizational needs. */}
                         Security audits, firewall configuration, endpoint protection, and threat monitoring. Our cybersecurity services are designed to protect your business from evolving threats, ensuring data integrity and operational continuity.
                     </Text>
                     <Image src={ArrowRight} className='self-end mt-[80px]' />
@@ -88,7 +94,6 @@ const ItSolutions = () => {
                         Cloud Services
                     </Text>
                     <Text type='body'>
-                        {/* Nurture connections with our CRM. Understand behavior, personalize interactions, and boost sales. Our tools empower exceptional customer experiences for business success */}
                         Our cloud services include scalable storage solutions, virtual servers, and seamless migration support. We ensure your business leverages the full potential of cloud technology, enhancing flexibility, collaboration, and cost-efficiency.
                     </Text>
                     <Image src={ArrowRight} className='self-end mt-[80px]' />
@@ -99,7 +104,6 @@ const ItSolutions = () => {
                     </Text>
                     <Text type='body'>
                         Remote and on-site technical support, system upgrades, and troubleshooting At Mahorix, we offer remote and on-site technical support, system upgrades, and troubleshooting services.
-                        {/* Our team ensures your IT infrastructure remains robust, up-to-date, and seamlessly operational, minimizing downtime and maximizing efficiency. */}
                     </Text>
                     <Image src={ArrowRight} className='self-end mt-[80px]' />
                 </Flex>
@@ -123,7 +127,6 @@ const ItSolutions = () => {
                         <Text type='body'>
                             "We drive innovation with tailored solutions, empowering businesses to excel in the evolving tech landscape."
                         </Text>
-                        {/* <Image src={ArrowRight} /> */}
                     </Box>
                 </Flex>
             </Box>
@@ -176,70 +179,38 @@ const ItSolutions = () => {
                         slidesToShow={isMobile ? 1 : 6}
                         slidesToScroll={isMobile ? 1 : 3} >
                         <div className='h-[300px] !flex !items-center !justify-center'>
-                            <Image src={require("@/assets/images/google.png")} className='h-[150px] ' />
+                            <Image src={googleImg} className='h-[150px] ' />
                         </div>
                         <div className='h-[300px] !flex !items-center !justify-center'>
-                            <Image src={require("@/assets/images/amazon-shopping-app.png")} className='h-[150px] ' />
+                            <Image src={amazonShoppingImg} className='h-[150px] ' />
                         </div>
                         <div className='h-[300px] !flex !items-center !justify-center'>
-                            <Image src={require("@/assets/images/nikon.png")} className='h-[150px] ' />
+                            <Image src={nikonImg} className='h-[150px] ' />
                         </div>
                         <div className='h-[300px] !flex !items-center !justify-center'>
-                            <Image src={require("@/assets/images/fedex.png")} className='h-[150px] ' />
+                            <Image src={fedexImg} className='h-[150px] ' />
                         </div>
                         <div className='h-[300px] !flex !items-center !justify-center'>
-                            <Image src={require("@/assets/images/amazon-shopping-app.png")} className='h-[150px] ' />
+                            <Image src={amazonShoppingImg} className='h-[150px] ' />
                         </div>
                         <div className='h-[300px] !flex !items-center !justify-center'>
-                            <Image src={require("@/assets/images/nikon.png")} className='h-[150px] ' />
+                            <Image src={nikonImg} className='h-[150px] ' />
                         </div>
                         <div className='h-[300px] !flex !items-center !justify-center'>
-                            <Image src={require("@/assets/images/fedex.png")} className='h-[150px] ' />
+                            <Image src={fedexImg} className='h-[150px] ' />
                         </div>
                         <div className='h-[300px] !flex !items-center !justify-center'>
-                            <Image src={require("@/assets/images/amazon-shopping-app.png")} className='h-[150px] ' />
+                            <Image src={amazonShoppingImg} className='h-[150px] ' />
                         </div>
                         <div className='h-[300px] !flex !items-center !justify-center'>
-                            <Image src={require("@/assets/images/nikon.png")} className='h-[150px] ' />
+                            <Image src={nikonImg} className='h-[150px] ' />
                         </div>
                         <div className='h-[300px] !flex !items-center !justify-center'>
-                            <Image src={require("@/assets/images/fedex.png")} className='h-[150px] ' />
+                            <Image src={fedexImg} className='h-[150px] ' />
                         </div>
-
                     </Slider>
                 </div>
             </Box>
-
-            {/* <div style={{ height: '600px' }} className="justify-center !relative">
-
-                <FloatingImage src={images.hex1} left={"23%"} top={"250px"} zi={-10} />
-                <FloatingImage src={images.hex1} right={"20%"} top={"250px"} zi={-10} />
-                {
-                    circleImages.map((img, i) => {
-                        return (
-                            <div className="text-center" style={{
-                                position: 'absolute', left: `${30 + (i * 11)}%`,
-                                top: "50%", zIndex: 100,
-                                transform: `translate(-${30 + (i * 11)}%, -50%)`
-                            }}>
-                                <Image
-                                    src={img.img}
-                                    style={{
-                                        height: '209px',
-                                        width: '209px',
-                                    }} />
-                                <Text>
-                                    {img.text}
-                                </Text>
-                            </div>
-                        )
-                    })
-                }
-                <Text type="h1" color={colors.secondary1}
-                    sx={{ transform: `translate(-50%, 0%)` }}
-                    className=" translate-[-50%,-50%] !absolute !bottom-20 left-[50%]"
-                >Meet the team</Text>
-            </div> */}
             <Box className={styles.personalize}>
                 <Text w={{ xs: '100%', lg: '50%' }} weight={400} type='h1' lh='50px' color={colors.white}>
                     Personalized learning with us. <br />
@@ -247,8 +218,6 @@ const ItSolutions = () => {
                 </Text>
 
                 <div className={styles.circle}>
-                    {/* <Image src={ArrowRight} /> */}
-
                     <FaArrowRightLong color={colors.white} size={30} />
                 </div>
             </Box>

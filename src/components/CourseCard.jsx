@@ -1,3 +1,4 @@
+'use client'
 import { Card } from '@mui/material'
 import Image from 'next/image'
 import React from 'react'

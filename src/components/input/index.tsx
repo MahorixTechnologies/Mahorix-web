@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { Input as AntInput, InputProps } from "antd/lib";
 import { Box } from '@mui/material';
