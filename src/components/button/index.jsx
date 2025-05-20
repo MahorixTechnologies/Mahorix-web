@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { colors } from '@/assets'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 export const Button = ({
     r = '10px',

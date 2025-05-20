@@ -5,7 +5,7 @@ import { HomeOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
 import { colors } from '@/assets';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 type MenuItem = Required<MenuProps>['items'][number];
 const items_ = [{ name: 'Home', href: '/', icon: <HomeOutlined /> },

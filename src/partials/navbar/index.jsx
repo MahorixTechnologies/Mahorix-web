@@ -6,7 +6,7 @@ import { Button, Text } from '@/components'
 import { colors, images } from '@/assets'
 import Image from 'next/image'
 import { Box } from '@mui/material'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { useDeviceSize } from '@/hooks'
 import { Sidebar } from './sidebar'
 import MenuIcon from '@mui/icons-material/Menu';
