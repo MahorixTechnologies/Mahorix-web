@@ -13,7 +13,7 @@ import Chooseus from "./home/chooseus";
 import Transform from "./home/transform";
 
 export const metadata = {
-  title: 'My Page Title',
+  title: 'Mahorix',
 }
 export default function Home() {
   return (
