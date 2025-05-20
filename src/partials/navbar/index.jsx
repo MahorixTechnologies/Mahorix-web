@@ -1,4 +1,5 @@
-// 'use client'
+
+'use client'
 import React, { use, useEffect } from 'react'
 import styles from './navbar.module.scss'
 import { Button, Text } from '@/components'

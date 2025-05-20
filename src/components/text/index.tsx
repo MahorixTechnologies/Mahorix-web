@@ -1,3 +1,4 @@
+'use client'
 import { SxProps, Typography, TypographyProps } from '@mui/material'
 import React, { ReactNode } from 'react'
 import styles from './text.module.scss'
