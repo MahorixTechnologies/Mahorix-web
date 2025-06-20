@@ -1,82 +1,66 @@
-@use '../../styles/color.scss' as colors;
-
+@use "../../styles/color.scss" as colors;
 .navbar {
-    background-color: white;
-    height: 98px;
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding:  50px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
+  background-color: white;
+  height: 98px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000 !important;
+  padding: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  img {
+    width: 140px;
+  }
+  // border-bottom: .1px solid grey;
+  @media screen and (max-width: 768px) {
+    padding: 10px 20px;
+    height: 57px;
     img {
-        width: 140px;
+      width: 100px;
     }
-
-    // border-bottom: .1px solid grey;
-    @media screen and (max-width: 768px) {
-        padding: 10px 20px;
-        height: 90px;
-
-        img {
-            width: 100px;
-        }
-
+  }
+  .nav {
+    background-color: colors.$tetiary1;
+    display: flex;
+    height: 49px;
+    justify-content: space-between;
+    gap: 70px;
+    padding: 0 50px;
+    align-items: center;
+    border-radius: 50px;
+    a {
+      color: colors.$secondary1;
+      text-decoration: none;
+      &:hover {
+        color: colors.$main1;
+      }
     }
-
-    .nav {
-        background-color: colors.$tetiary1;
-        display: flex;
-        height: 49px;
-        justify-content: space-between;
-        gap: 70px;
-        padding: 0 50px;
-        align-items: center;
-        border-radius: 50px;
-
-        a {
-            color: colors.$secondary1;
-            text-decoration: none;
-
-            &:hover {
-                color: colors.$main1;
-            }
-
-        }
-
-        .selected {
-            color: colors.$main1;
-        }
-
-        @media screen and (max-width: 768px) {
-            display: none;
-
-        }
+    .selected {
+      color: colors.$main1;
     }
-
-    .btns {
-        @media screen and (max-width: 768px) {
-            display: none !important;
-        }
+    @media screen and (max-width: 1024px) {
+      display: none;
     }
-
-    .hamburger {
-        display: none !important;
-
-        @media screen and (max-width: 768px) {
-            display: flex !important;
-            cursor: pointer;
-            height: 35px;
-            width: 35px;
-            // display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: colors.$secondary1;
-            color: white;
-            border-radius: 8px;
-        }
+  }
+  .btns {
+    @media screen and (max-width: 1024px) {
+      display: none !important;
     }
+  }
+  .hamburger {
+    display: none !important;
+    @media screen and (max-width: 1024px) {
+      display: flex !important;
+      cursor: pointer;
+      height: 35px;
+      width: 35px;
+      justify-content: center;
+      align-items: center;
+      background-color: colors.$secondary1;
+      color: white;
+      border-radius: 8px;
+    }
+  }
 }
