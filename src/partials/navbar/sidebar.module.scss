@@ -1,0 +1,23 @@
+.sidebarWrapper {
+  position: fixed;
+  top: 98px;
+  left: -300px; // Start off-screen
+  height: calc(100vh - 98px);
+  transition: left 0.3s ease-in-out;
+  z-index: 999;
+  &.open {
+    left: 0;
+  }
+  @media screen and (max-width: 768px) {
+    top: 57px;
+    height: calc(100vh - 57px);
+  }
+}
+
+.sidebar {
+  width: 256px;
+  background-color: white;
+  color: #fff;
+  height: 100%;
+  overflow-y: auto;
+}

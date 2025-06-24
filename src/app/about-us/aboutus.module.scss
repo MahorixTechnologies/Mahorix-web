@@ -1,66 +1,64 @@
 .aboutus {
-    .header {
-        width: 100%;
-        height: 867px;
-        background: linear-gradient(180deg, #8ED8F8 0%, #E1F4FD 100%);
-        padding: 50px;
-
-        .whoarewe{
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-
-            @media screen and (max-width: 480px) {
-                width: 100%;
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            height: auto;
-              padding: 50px 20px;
-
-        }
-
-        .message {
-            background: #E1F3F7;
-            width: 448px;
-            height: 216px;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            padding: 40px;
-            gap: 15px;
-
-            @media screen and (max-width: 768px) {
-                height: auto;
-                   width: 100%;
-                   display: none;
-            height: auto;
-                     padding: 10px;
-
-            }
-
-        }
+  .header {
+    width: 100%;
+    height: auto;
+    background: linear-gradient(180deg, #8ed8f8 0%, #e1f4fd 100%);
+    padding: 50px;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      gap: 2rem;
     }
-
-    .aboutBottom {
-        background-image: url('../../assets/svgs/aboutfoot.svg');
-        height: 400px;
+    .whoarewe {
+      display: flex;
+      flex-direction: column;
+      //   width: 50%;
+      z-index: 1 !important;
+      gap: 2rem;
+      @media screen and (max-width: 480px) {
         width: 100%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-
-        .circle {
-            background: #D9E2FF40;
-            width: 101px;
-            height: 101px;
-            border-radius: 100px;
-            display: grid;
-            place-content: center;
-        }
+      }
     }
+    @media screen and (max-width: 768px) {
+      height: auto;
+      padding: 50px 20px;
+    }
+    .message {
+      background: #e1f3f7;
+      width: 448px;
+      height: 216px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 40px;
+      gap: 15px;
+      @media screen and (max-width: 768px) {
+        height: auto;
+        width: 100%;
+        display: none;
+        height: auto;
+        padding: 10px;
+      }
+    }
+  }
+  .aboutBottom {
+    background-image: url("../../assets/svgs/aboutfoot.svg");
+    height: 400px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    .circle {
+      background: #d9e2ff40;
+      width: 101px;
+      height: 101px;
+      border-radius: 100px;
+      display: grid;
+      place-content: center;
+    }
+  }
 }

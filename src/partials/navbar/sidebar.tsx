@@ -1,25 +1,27 @@
-'use client'
-import React from 'react';
+"use client";
+import React from "react";
 
-import { HomeOutlined } from '@ant-design/icons';
-import type { MenuProps } from 'antd';
-import { Menu } from 'antd';
-import { colors } from '@/assets';
-import { useRouter } from 'next/navigation';
+import {HomeOutlined} from "@ant-design/icons";
+import type {MenuProps} from "antd";
+import {Menu} from "antd";
+import {colors} from "@/assets";
+import {useRouter} from "next/navigation";
+import styles from "./sidebar.module.scss";
 
-type MenuItem = Required<MenuProps>['items'][number];
-const items_ = [{ name: 'Home', href: '/', icon: <HomeOutlined /> },
-{ name: 'About Us', href: '/about-us' },
-{ name: 'I.T Solutions', href: '/it-solutions' },
-{ name: 'EduTech', href: '/edu-tech' },
-{ name: 'Contact Us', href: '/contact-us' },]
+type MenuItem = Required<MenuProps>["items"][number];
+const items_ = [
+  {name: "Home", href: "/", icon: <HomeOutlined />},
+  {name: "About Us", href: "/about-us"},
+  {name: "I.T Solutions", href: "/it-solutions"},
+  {name: "EduTech", href: "/edu-tech"},
+  {name: "Contact Us", href: "/contact-us"},
+];
 
 // const items: MenuItem[] = [
 //     {
 //         key: '/',
 //         label: 'Home',
 //         icon: <MailOutlined />,
-
 
 //     },
 //     {
@@ -39,29 +41,38 @@ const items_ = [{ name: 'Home', href: '/', icon: <HomeOutlined /> },
 //     },
 // ];
 const items: MenuItem[] = items_.map((item) => ({
-    key: item.href,
-    label: item.name,
-    icon: item.icon,
+  key: item.href,
+  label: item.name,
+  icon: item.icon,
 }));
 
-const Sidebar: React.FC = () => {
-    const router = useRouter()
-    const onClick: MenuProps['onClick'] = (e) => {
-        console.log(e.key)
-        router.push(e.key);
-    };
+interface SidebarProps {
+  isOpen?: boolean;
+}
 
-    return (
-        <Menu
+const Sidebar: React.FC<SidebarProps> = ({isOpen = false}) => {
+  const router = useRouter();
+  const onClick: MenuProps["onClick"] = (e) => {
+    console.log(e.key);
+    router.push(e.key);
+  };
 
-            onClick={onClick}
-            style={{ width: 256, backgroundColor: colors.white, color: '#fff', position: 'fixed', height: '100vh', top: 55, left: 0 }}
-            defaultSelectedKeys={['1']}
-            defaultOpenKeys={['sub1']}
-            mode="inline"
-            items={items}
-        />
-    );
+  return (
+    <div className={`${styles.sidebarWrapper} ${isOpen ? styles.open : ""}`}>
+      <Menu
+        onClick={onClick}
+        style={{
+          backgroundColor: colors.white,
+          color: "#fff",
+        }}
+        className={styles.sidebar}
+        defaultSelectedKeys={["1"]}
+        defaultOpenKeys={["sub1"]}
+        mode='inline'
+        items={items}
+      />
+    </div>
+  );
 };
 
-export { Sidebar };
+export {Sidebar};

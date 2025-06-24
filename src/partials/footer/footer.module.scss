@@ -1,132 +1,112 @@
-@use '../../styles/color.scss' as colors;
-
+@use "../../styles/color.scss" as colors;
 .footer {
-    background-color: white;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  flex-wrap: wrap;
+  @media screen and (max-width: 768px) {
+    padding: 20px;
+    // flex-direction: column;
+    gap: 20px;
+  }
+  .footerTop {
     display: flex;
-    flex-direction: column;
-    padding: 50px;
     flex-wrap: wrap;
-
+    justify-content: space-between;
     @media screen and (max-width: 768px) {
-        padding: 20px;
-        // flex-direction: column;
-        gap: 20px;
+      padding: 20px 0;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      // align-items: center;
+      gap: 20px;
     }
-
-
-    .footerTop {
+    .logoAndcontact,
+    .company,
+    .information {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .subscribe {
+      width: 369px;
+      height: 261px;
+      left: 804px;
+      border-radius: 30px;
+      background-color: colors.$tetiary1;
+      // padding:0 50px;
+      display: flex;
+      align-items: center !important;
+      justify-content: center;
+      margin: 20px 0;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        height: auto;
+        padding: 50px 0px;
+      }
+      .subscribeEmail {
+        width: 271px;
+        height: 50px;
         display: flex;
-        justify-content: space-between;
-
+        border-radius: 30px;
+        background-color: #ffffff;
         @media screen and (max-width: 768px) {
-            padding: 20px 0;
-            flex-direction: column;
-            gap: 20px;
-            justify-content: center;
-            // align-items: center;
-            gap: 20px;
+          width: 100%;
         }
-
-        .logoAndcontact,
-        .company,
-        .information {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        input {
+          border-radius: 30px;
+          background-color: inherit;
+          height: 100%;
+          width: 90%;
+          padding: 10px 15px;
+          outline: none;
+          &::placeholder {
+            color: colors.$main2;
+          }
         }
-
-        .subscribe {
-            width: 369.4711608886719px;
-            height: 261.1463317871094px;
-            left: 804.53px;
-            border-radius: 30px;
-            background-color: colors.$tetiary1;
-            // padding:0 50px;
-            display: flex;
-            align-items: center !important;
-            justify-content: center;
-            margin: 20px 0;
-
-            @media screen and (max-width: 768px) {
-                width: 100%;
-                height: auto;
-                padding: 50px 0px;
-            }
-
-            .subscribeEmail {
-                width: 271.09124755859375px;
-                height: 50.60975646972656px;
-                display: flex;
-                border-radius: 30px;
-                background-color: #FFFFFF;
-
-                @media screen and (max-width: 768px) {
-                    width: 100%;
-                }
-
-                input {
-                    border-radius: 30px;
-                    background-color: inherit;
-                    height: 100%;
-                    width: 90%;
-                    padding: 10px 15px;
-                    outline: none;
-
-                    &::placeholder {
-                        color: colors.$main2;
-                    }
-                }
-
-                button {
-                    width: 60px !important;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-self: flex-end;
-                }
-
-            }
-
+        button {
+          width: 60px !important;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-self: flex-end;
         }
-
+      }
     }
-
-    .footerBottom {
-        display: flex;
-        justify-content: space-between;
-        height: 100px;
-        align-items: center;
-
-        @media screen and (max-width: 768px) {
-            padding: 20px 0;
-            flex-direction: column;
-            gap: 50px;
-            margin-bottom: 50px;
-            height: auto;
-            text-align: center;
-        }
-
-        .termsPrivacyCookie {
-            display: flex;
-            gap: 20px;
-        }
-
-        .socials {
-            display: flex;
-            gap: 15px;
-
-            .circle {
-                width: 38px;
-                height: 35px;
-                // opacity: 0.1;
-                border-width: 1.5px;
-                border-radius: 100%;
-                border-color: lightgray;
-                color: #0A142F;
-                display: grid;
-                place-items: center;
-
-            }
-        }
+  }
+  .footerBottom {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+    @media screen and (max-width: 768px) {
+      padding: 20px 0;
+      flex-direction: column;
+      gap: 50px;
+      margin-bottom: 50px;
+      height: auto;
+      text-align: center;
     }
+    .termsPrivacyCookie {
+      display: flex;
+      gap: 20px;
+    }
+    .socials {
+      display: flex;
+      gap: 15px;
+      .circle {
+        width: 38px;
+        height: 35px;
+        // opacity: 0.1;
+        border-width: 1.5px;
+        border-radius: 100%;
+        border-color: lightgray;
+        color: #0a142f;
+        display: grid;
+        place-items: center;
+      }
+    }
+  }
 }
