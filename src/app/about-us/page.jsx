@@ -154,13 +154,13 @@ function AboutUs() {
         <AboutCard
           src={images.vision}
           title={"Vision Statement"}
-          subtext={"To be a leading brand in providing learning solutions."}
+          subtext={"Innovation and Transformational Impact for Africans"}
         />
         <AboutCard
           src={images.missionstatement}
           title={"Mission Statement"}
           subtext={
-            "To provide learning solutions, Deploying professional expertise and innovations."
+            "Empowering young African minds with in-demand tech skills, connecting them to job opportunities and transforming ideas into impactful solutions.."
           }
         />
       </Flex>
