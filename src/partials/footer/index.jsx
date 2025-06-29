@@ -1,13 +1,14 @@
 "use client";
 import React from "react";
 import styles from "./footer.module.scss";
-import {Container, Divider} from "@mui/material";
+import { Box, Container, Divider } from "@mui/material";
 import Image from "next/image";
-import {colors, images} from "@/assets";
-import {Button, Text} from "@/components";
-import {ArrowForward} from "@mui/icons-material";
-import {useRouter} from "next/navigation";
-import {FaLinkedinIn, FaTwitter, FaFacebookF} from "react-icons/fa";
+import { colors, images } from "@/assets";
+import { Button, Text } from "@/components";
+import { ArrowForward } from "@mui/icons-material";
+import { useRouter } from "next/navigation";
+import { FaLinkedinIn, FaFacebookF } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   const router = useRouter();
@@ -15,12 +16,12 @@ const Footer = () => {
     <Container maxWidth='xl' component={"footer"} className={styles.footer}>
       <div className={styles.footerTop}>
         <div className={styles.logoAndcontact}>
-          <Image src={images.logo} alt='mahorix-logo' />
+          <Image src={images.logo} width={200} alt='mahorix-logo' />
 
-          <Text>mahorixtechnologies@gmail.com</Text>
+          <Text><a href="mailto:mahorixtechnologies@gmail.com"></a></Text>
           <Text>
-            08144660073, 08085503290, <br />
-            07051441713
+            <a href="tel:+2348144660073">+2348144660073</a>, <a href="tel:+2348085503290">+2348085503290</a>, <br />
+            <a href="tel:+2347051441713"> +2347051441713</a>
           </Text>
           <Text>
             371 borno way, <br /> Alagomeji, Yaba, lagos.
@@ -44,6 +45,13 @@ const Footer = () => {
               onClick={() => router.push("/edu-tech")}
             >
               Edu Tech
+            </Text>
+            <Text
+              isLink
+              color={colors.main2}
+              onClick={() => router.push("/it-solutions")}
+            >
+              IT Solutions
             </Text>
             <Text
               isLink
@@ -89,7 +97,7 @@ const Footer = () => {
       <div className={styles.footerBottom}>
         <div className={styles.copyright}>
           <Text type='body2' color={colors.grey} className='text-center'>
-            Copyright 2025. MAHORIX TECHNOLOGIES. All Rights Reserved.
+            <span >©</span> 2025. MAHORIX TECHNOLOGIES. <br /> All Rights Reserved.
           </Text>
         </div>
         <div className={styles.termsPrivacyCookie}>
@@ -104,15 +112,15 @@ const Footer = () => {
           </Text>
         </div>
         <div className={styles.socials}>
-          <div className={styles.circle}>
-            <FaLinkedinIn />
-          </div>
-          <div className={styles.circle}>
+          <Box component={'a'} href="https://www.linkedin.com/company/mahorix-technologies" className={styles.circle}>
+            <FaLinkedinIn  />
+          </Box>
+          <Box component={'a'} href="https://www.linkedin.com/company/mahorix-technologies" className={styles.circle}>
             <FaFacebookF />
-          </div>
-          <div className={styles.circle}>
-            <FaTwitter />
-          </div>
+          </Box>
+          <Box component={'a'} href="https://x.com/mahorix_tech" className={styles.circle}>
+            <FaXTwitter />
+          </Box>
         </div>
       </div>
     </Container>

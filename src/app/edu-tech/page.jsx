@@ -39,8 +39,8 @@ const Edutech = () => {
   return (
     <Layout >
       <Container maxWidth='xl' justify='space-between' wrap component={Flex} align='center' sx={{ my: { xs: '100px', lg: 0 }, gap: { xs: "50px" } }} className='min-h-[300px]'>
-        <div className='flex flex-col gap-[60px]'>
-          <Text type='h1' lh='60px' className='max-w-[500px]'>
+        <div className='flex flex-col gap-[60px] mx-auto'>
+          <Text type='h1' lh='60px' className='max-w-[600px]'>
             Welcome to Mahorix EduTech, <br />
             Your gateway to <span className='text-[#00AEEF]'>learning</span> and <br /> professional growth.
           </Text>
@@ -50,15 +50,15 @@ const Edutech = () => {
         </div>
         <Image src={require('@/assets/images/edutechheader.png')} />
       </Container>
-      <Box className='flex justify-center text-center my-5 '>
+      {/* <Box className='flex justify-center text-center my-5 '>
         <Text type='h1' className='capitalize' align='center' lh='50px'>
           Search Among <span className='text-[#00AEEF]'>6</span> courses and <br />find your favorite course
         </Text>
-      </Box>
+      </Box> */}
 
       <Container maxWidth='xl' className='flex flex-col' >
         <Flex justify='space-between' className='!my-[60px]'>
-          <Text className='uppercase' type='h4'>New courses</Text>
+          <Text className='uppercase' type='h4'>Avaliable courses</Text>
         </Flex>
         <Flex ref={scrollToRef} gap={'30px'} className='mx-auto w-fit m justify-evenly  p-0'  wrap>
           <CourseCard
@@ -113,7 +113,7 @@ const Edutech = () => {
           <TestimonyCard person={'Steves Harvey'} position={'Chief Executive Officer of Netflix'} text={'In total, it was a big success, I would get emails about what a fantastic resource it was.'} />
         </Flex>
       </Container>
-      <Container maxWidth='xl' className='my-[100px] '>
+      {/* <Container maxWidth='xl' className='my-[100px] '>
         <Flex gap={"40px"} align='center' wrap>
           <div className='flex flex-col gap-[80px]  flex-1'>
             <div className='flex flex-col gap-[10px]'>
@@ -174,7 +174,7 @@ const Edutech = () => {
             </Card>
           </Flex>
         </Flex>
-      </Container>
+      </Container> */}
       <Box className={styles.findout}>
         <Text type='h1' lh='65px' className='capitalize'>
           Find out about the latest courses with the <br />

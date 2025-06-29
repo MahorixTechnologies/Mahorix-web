@@ -1,14 +1,14 @@
 "use client";
-import {Layout} from "@/partials";
+import { Layout } from "@/partials";
 import styles from "./aboutus.module.scss";
-import {Flex} from "antd";
+import { Flex } from "antd";
 import Image from "next/image";
-import {colors, images} from "@/assets";
-import {FloatingImage, MPaper, Text} from "@/components";
-import {BsDashLg} from "react-icons/bs";
-import {Box} from "@mui/material";
-import {FaArrowRightLong} from "react-icons/fa6";
-import {useDeviceSize} from "@/hooks";
+import { colors, images } from "@/assets";
+import { FloatingImage, MPaper, Text } from "@/components";
+import { BsDashLg } from "react-icons/bs";
+import { Box } from "@mui/material";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { useDeviceSize } from "@/hooks";
 
 const circleImages = [
   {
@@ -67,14 +67,17 @@ const AboutCard = ({
   height = 400,
   padding = "30px",
 }) => {
-  const {isMobile} = useDeviceSize();
+  const { isMobile } = useDeviceSize();
   return (
     <MPaper
       elevation={6}
-      height={height}
+      // minHeight={height}
       width={width}
       radius={"25px"}
       padding={padding}
+      sx={{
+        minHeight: height
+      }}
     >
       <Flex
         vertical
@@ -85,7 +88,7 @@ const AboutCard = ({
       >
         <Image height={100} width={100} src={src} />
         <Text type='h2'>{title}</Text>
-        <Text className='!text-center max-w-[300px]' type='body'>
+        <Text className='!text-center max-w-[400px]' type='subtitle2'>
           {subtext}
         </Text>
       </Flex>
@@ -94,7 +97,7 @@ const AboutCard = ({
 };
 
 function AboutUs() {
-  const {isMobile} = useDeviceSize();
+  const { isMobile } = useDeviceSize();
 
   return (
     <Layout className={styles.aboutus}>
@@ -129,7 +132,7 @@ function AboutUs() {
           <Text
             type='body'
             className='max-w-[400px] !text-justify'
-            style={{zIndex: -1}}
+            style={{ zIndex: -1 }}
           >
             We are educators and tech innovators empowering individuals and
             businesses with digital skills and solutions. From learning to
@@ -145,8 +148,8 @@ function AboutUs() {
         justify='center'
         gap={50}
         component={Box}
-        sx={{py: {xs: "100px", lg: "10px"}, px: "10px"}}
-        style={{minHeight: "500px", paddingTop: "100px"}}
+        sx={{ py: { xs: "100px", lg: "10px" }, px: "10px" }}
+        style={{ minHeight: "500px", paddingTop: "100px" }}
       >
         <AboutCard
           src={images.vision}
@@ -165,11 +168,11 @@ function AboutUs() {
         display={"flex"}
         flexDirection={"column"}
         gap={10}
-        my={"80px"}
+        my={"40px"}
         py={"50px"}
         position={"relative"}
       >
-        <FloatingImage src={images.hex1} left={"20%"} />
+        <FloatingImage src={images.hex1} left={"5%"} top={"-50px"} />
         <Text color={colors.secondary1} className='!text-center' type='h1'>
           Our Core Values
         </Text>
@@ -182,16 +185,16 @@ function AboutUs() {
             minHeight: "500px",
             width: "100%",
             margin: "auto",
-            marginTop: "80px",
+            marginTop: "40px",
             padding: "1em",
           }}
         >
           <AboutCard
             src={images.vision}
-            title={"INITIATIVE"}
+            title={"Excellence"}
             width={"min(100%,600px)"}
             subtext={
-              "We lead with intention. We take proactive steps toward solving problems, creating opportunities, and making a difference. We are driven by purpose and fueled by a desire to create lasting impact."
+              "Deliver Exceptional Solutions: Craft innovative, effective and efficient ICT solutions. \n Continuous Improvement: Stay up-to-date with industry trends and best practices. \n	Striving for the highest quality and standards in everything."
             }
           />
           <AboutCard
@@ -199,15 +202,15 @@ function AboutUs() {
             title={"INNOVATION"}
             width={"min(100%,600px)"}
             subtext={
-              "We think differently. By embracing creativity and curiosity, we turn struggles into opportunities and ideas into impactful solutions."
+              "Tech for All: Democratize access to technology and its benefits. \n Creative Problem-Solving: Encourage innovative thinking and solutions. \n Stay Curious: Foster a culture of experimentation and exploration. \n Encouraging creativity, new ideas, and continuous improvement."
             }
           />
           <AboutCard
             src={images.vision}
-            title={"INSPIRATION"}
+            title={"Empowerment"}
             width={"min(100%,600px)"}
             subtext={
-              "We lead by example and spark possibility. Through our actions, passion, and purpose, we empower others to dream bigger, do better, and become more."
+              "Encouraging and enabling employees to take initiative and 	grow. \n ⁠Learn, Unlearn, Relearn: Embrace lifelong learning and continuous improvement. \n Mentorship Matters: Guide and support individuals to achieve their tech career goals. \n Inclusive Access: Provide equal opportunities for everyone 	to acquire tech skills."
             }
           />
           <AboutCard
@@ -215,7 +218,15 @@ function AboutUs() {
             title={"INTEGRITY "}
             width={"min(100%,600px)"}
             subtext={
-              "We deliver on our promise. You can count on us to follow through on our commitments while upholding consistent and uncompromising adherence to strong ethical principles and values."
+              "⁠Authenticity: Be genuine, transparent, and honest in all interactions. \n	Accountability: Take ownership of actions and outcomes. \n Respect: Value diversity, individuality, and uniqueness. \n Acting with honesty, fairness, and transparency."
+            }
+          />
+          <AboutCard
+            src={images.missionstatement}
+            title={"Community "}
+            width={"min(100%,600px)"}
+            subtext={
+              "Supportive Network: Build a community that uplifts and motivates each other. \n Collaborative Learning: Encourage peer-to-peer learning and knowledge sharing. \n Celebrate Success: Recognize and celebrate milestones and achievements."
             }
           />
 
@@ -230,8 +241,8 @@ function AboutUs() {
         radius={"35px"}
         width={"90%"}
         center
-        height={{xs: "auto", lg: 270}}
-        sx={{m: "80px auto", position: "relative", display: "block", py: 10}}
+        height={{ xs: "auto", lg: 270 }}
+        sx={{ m: "80px auto", position: "relative", display: "block", py: 10 }}
       >
         <Box
           position={"absolute"}

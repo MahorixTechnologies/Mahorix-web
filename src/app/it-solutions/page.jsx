@@ -1,20 +1,20 @@
 "use client";
 
-import {Box, Container} from "@mui/material";
-import {Flex} from "antd/lib";
+import { Box, Container } from "@mui/material";
+import { Flex } from "antd/lib";
 import Image from "next/image";
-import {BsDashLg} from "react-icons/bs";
-import {colors, images} from "@/assets";
-import {Button, FloatingImage, MPaper, Text} from "@/components";
-import {Layout} from "@/partials";
+import { BsDashLg } from "react-icons/bs";
+import { colors, images } from "@/assets";
+import { Button, FloatingImage, MPaper, Text } from "@/components";
+import { Layout } from "@/partials";
 import styles from "./itsolutions.module.scss";
 import ArrowRight from "@/assets/svgs/arrowright.svg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {FaArrowRightLong} from "react-icons/fa6";
+import { FaArrowRightLong } from "react-icons/fa6";
 import Transform from "../home/transform";
-import {useDeviceSize} from "@/hooks";
+import { useDeviceSize } from "@/hooks";
 
 // Import images at the top of the file:
 import itHeaderImg from "@/assets/images/itheader.png";
@@ -38,23 +38,23 @@ const ItSolutions = () => {
     speed: 500,
   };
 
-  const {isMobile} = useDeviceSize();
+  const { isMobile, width } = useDeviceSize();
 
   return (
     <Layout>
       <Container
         component={Box}
-        sx={{flexDirection: {xs: "column-reverse", md: "row"}}}
+        sx={{ flexDirection: { xs: "column-reverse", md: "row" } }}
         margin={0}
         maxWidth='xl'
         className='min-h-[700px] py-[100px] items-center  flex flex-wrap'
       >
-        <Box component={"div"} sx={{flex: "55%"}} className='block'>
+        <Box component={"div"} sx={{ flex: "55%" }} className='block'>
           <Text
             type='h1'
             block
             textAlign={"justify"}
-            className='text-justify !mt-[100px]'
+            className='text-justify !mt-[30px]'
           >
             "We drive innovation with tailored tech solutions, empowering
             businesses to navigate and thrive in the evolving digital
@@ -65,7 +65,7 @@ const ItSolutions = () => {
         <Image
           src={itHeaderImg}
           className='mx-auto !h-[640px]'
-          style={{flex: "36%", width: "min(400px,100%)"}}
+          style={{ flex: "36%", width: "min(400px,100%)" }}
         />
       </Container>
       <Box
@@ -73,14 +73,14 @@ const ItSolutions = () => {
         wrap
         margin={0}
         sx={{
-          flexDirection: {xs: "column", md: "row"},
-          py: {xs: "100px", lg: "20px"},
-          gap: {xs: "150px", lg: 0},
+          flexDirection: { xs: "column", md: "row" },
+          py: { xs: "100px", lg: "20px" },
+          gap: { xs: "150px", lg: '40px' },
         }}
         className={styles.whatwedo}
       >
-        <Image src={galleryImg} className=' !h-[640px]' style={{flex: 1}} />
-        <div className=' flex flex-col gap-3 ' style={{flex: 1}}>
+        <Image src={galleryImg} style={{ flex: 1, width: 'max(100%,400px)' }} />
+        <div className=' flex flex-col gap-3 ' style={{ flex: 1 }}>
           <Text
             type='h3'
             color={colors.secondary1}
@@ -99,7 +99,7 @@ const ItSolutions = () => {
             type='body'
             block
             textAlign={"justify"}
-            w={{xs: "100%", lg: "70%"}}
+            w={{ xs: "100%", lg: "70%" }}
             className='text-justify'
           >
             At Mahorix, we provide tailored IT solutions that help individuals,
@@ -112,13 +112,13 @@ const ItSolutions = () => {
         </div>
       </Box>
       <Container maxWidth='xl' component={Box} mt={"100px"}>
-        <Flex justify='space-evenly' wrap gap={"100px"} align='center'>
-          <Text w='' size={"75px"}>
+        <Flex wrap gap={"100px"} >
+          <Text w='' align="left" size={"75px"} className="!text-left">
             Services
           </Text>
           <Text
-            w={{xs: "100%", lg: "60%"}}
-            sx={{textAlign: {xs: "justify", lg: "right"}}}
+            w={{ xs: "100%", lg: "60%" }}
+            sx={{ textAlign: { xs: "justify", lg: "right" } }}
             weight={500}
             type='body'
           >
@@ -145,7 +145,7 @@ const ItSolutions = () => {
         component={Flex}
         wrap
         gap={30}
-        sx={{pb: "60px"}}
+        sx={{ pb: "60px" }}
       >
         <Flex className={styles.services} gap={"20px"} vertical>
           <Text type='h2' color={colors.secondary1} block=''>
@@ -184,7 +184,7 @@ const ItSolutions = () => {
         </Flex>
       </Container>
       <Box className={styles.ourwork}>
-        <Flex vertical gap={"30px"} style={{flex: 1}}>
+        <Flex vertical gap={"30px"} style={{ flex: 1 }}>
           <Text type='h1' color={colors.secondary1}>
             Our Work
           </Text>
@@ -198,7 +198,7 @@ const ItSolutions = () => {
         </Flex>
         <Flex
           component={Box}
-          style={{backgroundColor: "white", flex: 1}}
+          style={{ backgroundColor: "white", flex: 1 }}
           className='shadow  max-w-[530px] rounded-[24px] !p-[50px] flex flex-col justify-center '
           vertical
           gap={"30px"}
@@ -206,7 +206,7 @@ const ItSolutions = () => {
           <Text type='h2' color={colors.secondary1} block>
             Technology
           </Text>
-          <Box sx={{display: "flex", gap: 2, alignItems: "flex-end"}}>
+          <Box sx={{ display: "flex", gap: 2, alignItems: "flex-end" }}>
             <Text type='body'>
               "We drive innovation with tailored solutions, empowering
               businesses to excel in the evolving tech landscape."
@@ -219,8 +219,8 @@ const ItSolutions = () => {
         radius={"35px"}
         width={"90%"}
         center
-        height={{xs: 400, lg: 270}}
-        sx={{m: "80px auto", position: "relative"}}
+        height={{ xs: 400, lg: 270 }}
+        sx={{ m: "80px auto", position: "relative" }}
       >
         <Box
           position={"absolute"}
@@ -230,8 +230,8 @@ const ItSolutions = () => {
           justifyContent={"center"}
           alignItems={"center"}
         >
-          {!isMobile && (
-            <Text weight={600} color={colors.tetiary1} size={"150px"}>
+          {(
+            <Text weight={600} color={colors.tetiary1} size={`${width * .07}px`}>
               {" "}
               M I L E S T O N E S
             </Text>
@@ -240,7 +240,7 @@ const ItSolutions = () => {
         <Flex
           component={Box}
           className='relative z-[100] w-full px-5'
-          sx={{gap: {xs: "50px"}}}
+          sx={{ gap: { xs: "50px" } }}
           wrap
           justify='space-evenly'
         >
@@ -291,47 +291,49 @@ const ItSolutions = () => {
         <div className='slider-container mx-auto !relative'>
           <FloatingImage src={images.hex1} right={"10%"} top={10} />
           <FloatingImage src={images.hex1} left={"10%"} bottom={-10} />
+          {/* {Math.ceil((width / 1800) * (6))} */}
+          {Math.ceil((width / 1800) * (6))}
           <Slider
             {...settings}
-            slidesToShow={isMobile ? 1 : 6}
-            slidesToScroll={isMobile ? 1 : 3}
+            slidesToShow={Math.ceil((width / 1800) * (6))}
+            slidesToScroll={Math.ceil((width / 1800) * (3))}
           >
-            <div className='h-[300px] !flex !items-center !justify-center'>
+            <div className='h-[300px] mx-2 !flex !items-center !justify-center'>
               <Image src={googleImg} className='h-[150px] ' />
             </div>
-            <div className='h-[300px] !flex !items-center !justify-center'>
+            <div className='h-[300px] mx-2 !flex !items-center !justify-center'>
               <Image src={amazonShoppingImg} className='h-[150px] ' />
             </div>
-            <div className='h-[300px] !flex !items-center !justify-center'>
+            <div className='h-[300px] mx-2 !flex !items-center !justify-center'>
               <Image src={nikonImg} className='h-[150px] ' />
             </div>
-            <div className='h-[300px] !flex !items-center !justify-center'>
+            <div className='h-[300px] mx-2 !flex !items-center !justify-center'>
               <Image src={fedexImg} className='h-[150px] ' />
             </div>
-            <div className='h-[300px] !flex !items-center !justify-center'>
+            <div className='h-[300px] mx-2 !flex !items-center !justify-center'>
               <Image src={amazonShoppingImg} className='h-[150px] ' />
             </div>
-            <div className='h-[300px] !flex !items-center !justify-center'>
+            <div className='h-[300px] mx-2 !flex !items-center !justify-center'>
               <Image src={nikonImg} className='h-[150px] ' />
             </div>
-            <div className='h-[300px] !flex !items-center !justify-center'>
+            <div className='h-[300px] mx-2 !flex !items-center !justify-center'>
               <Image src={fedexImg} className='h-[150px] ' />
             </div>
-            <div className='h-[300px] !flex !items-center !justify-center'>
+            <div className='h-[300px] mx-2 !flex !items-center !justify-center'>
               <Image src={amazonShoppingImg} className='h-[150px] ' />
             </div>
-            <div className='h-[300px] !flex !items-center !justify-center'>
+            <div className='h-[300px] mx-2 !flex !items-center !justify-center'>
               <Image src={nikonImg} className='h-[150px] ' />
             </div>
-            <div className='h-[300px] !flex !items-center !justify-center'>
+            <div className='h-[300px] mx-2 !flex !items-center !justify-center'>
               <Image src={fedexImg} className='h-[150px] ' />
             </div>
           </Slider>
         </div>
       </Box>
-      <Box className={styles.personalize}>
+      <Box className={styles.personalize} component={'a'} href="/edu-tech">
         <Text
-          w={{xs: "100%", lg: "50%"}}
+          w={{ xs: "100%", lg: "50%" }}
           weight={400}
           type='h1'
           lh='50px'

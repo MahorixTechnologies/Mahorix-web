@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './mahorixlogo.png';
 import header from './header.png';
 import face from './face.png';
 import quote from './quote.png';

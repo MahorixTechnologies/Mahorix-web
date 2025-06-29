@@ -7,7 +7,7 @@ import {images} from "@/assets";
 const Header = () => {
   return (
     <div className={styles.header}>
-      <div className='flex flex-col gap-[50px] p-10'>
+      <div className='flex flex-col gap-[50px] p'>
         <div className='flex flex-col gap-5 '>
           <Text size='60px' weight={300}>
             MAHORIX
@@ -17,10 +17,10 @@ const Header = () => {
         <Text type='h3'>
           {/* Innovating Tomorrow's Solutions, Today.
                     MAHORIX – Your Trusted IT Partner */}
-          Innovating with Purpose. Empowering with Passion. <br />
+          Innovating with Purpose. <br /> Empowering with Passion. <br />
           Delivering purpose-led innovations and <br /> people-focused solutions
         </Text>
-        <Button width='142px' height='52px' className='mb-5'>
+        <Button width='142px' height='52px' className='mb-5' to="/contact-us">
           Get Started
         </Button>
       </div>

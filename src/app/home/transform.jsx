@@ -23,7 +23,7 @@ const Transform = () => {
       >
         Ready to Transform Your Ideas into <br /> Results? Let's Get Started!
       </Text>
-      <Button>Schedule a Call</Button>
+      <Button to="/contact-us">Schedule a Call</Button>
     </div>
   );
 };

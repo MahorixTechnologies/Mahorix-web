@@ -67,14 +67,14 @@ const Chooseus = () => {
           </Text>
         </MPaper>
       </div>
-      <div className='mx-auto w-fit my-5 flex gap-3'>
+      {/* <div className='mx-auto w-fit my-5 flex gap-3'>
         <Button>
           <BsChevronLeft />
         </Button>
         <Button>
           <BsChevronRight />
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 };
