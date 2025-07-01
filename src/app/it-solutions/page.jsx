@@ -292,11 +292,11 @@ const ItSolutions = () => {
           <FloatingImage src={images.hex1} right={"10%"} top={10} />
           <FloatingImage src={images.hex1} left={"10%"} bottom={-10} />
           {/* {Math.ceil((width / 1800) * (6))} */}
-          {Math.ceil((width / 1800) * (6))}
+          {/* {Math.ceil((width / 1800) * (6))} */}
           <Slider
             {...settings}
             slidesToShow={Math.ceil((width / 1800) * (6))}
-            slidesToScroll={Math.ceil((width / 1800) * (3))}
+            slidesToScroll={1}
           >
             <div className='h-[300px] mx-2 !flex !items-center !justify-center'>
               <Image src={googleImg} className='h-[150px] ' />

@@ -9,12 +9,16 @@ import React from 'react'
 import { BsChevronRight } from 'react-icons/bs'
 import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
 import styles from './edutech.module.scss'
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { useDeviceSize } from '@/hooks'
 
 
 const TestimonyCard = ({
   text, person, position
 }) => {
-  return (<Box sx={{ width: { xs: '100%', lg: '30%' } }}>
+  return (<Box sx={{ width: '100%', mx:'20px' }}>
     <Box sx={{ bgcolor: '#F5F7FA', height: '280px' }} className='flex flex-col gap-[20px] justify-center p-[40px]'>
       <div className='flex '>
         <ImQuotesLeft color={colors.secondary1} size={40} />
@@ -35,7 +39,15 @@ const TestimonyCard = ({
 }
 
 const Edutech = () => {
+
+
+  const { isMobile, width } = useDeviceSize();
   const scrollToRef = React.useRef(null)
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+  };
   return (
     <Layout >
       <Container maxWidth='xl' justify='space-between' wrap component={Flex} align='center' sx={{ my: { xs: '100px', lg: 0 }, gap: { xs: "50px" } }} className='min-h-[300px]'>
@@ -44,9 +56,13 @@ const Edutech = () => {
             Welcome to Mahorix EduTech, <br />
             Your gateway to <span className='text-[#00AEEF]'>learning</span> and <br /> professional growth.
           </Text>
-          <Button onClick={() => window.scrollTo({ top: scrollToRef.current?.offsetTop, behavior: 'smooth' })}>
-            Start Learning Now
-          </Button>
+          <a href="https://docs.google.com/forms/d/151ywKMxcTN9iXHUmYm9oDuPwb7fu-XN9f4ZJLF9V-5w/edit?ts=68643db2" target='_blank'>
+
+            <Button
+              onClick={() => window.scrollTo({ top: scrollToRef.current?.offsetTop, behavior: 'smooth' })}>
+              Start Learning Now
+            </Button>
+          </a>
         </div>
         <Image src={require('@/assets/images/edutechheader.png')} />
       </Container>
@@ -58,9 +74,9 @@ const Edutech = () => {
 
       <Container maxWidth='xl' className='flex flex-col' >
         <Flex justify='space-between' className='!my-[60px]'>
-          <Text className='uppercase' type='h4'>Avaliable courses</Text>
+          <Text className='uppercase' type='h4'>Available courses</Text>
         </Flex>
-        <Flex ref={scrollToRef} gap={'30px'} className='mx-auto w-fit m justify-evenly  p-0'  wrap>
+        <Flex ref={scrollToRef} gap={'30px'} className='mx-auto w-fit m justify-evenly  p-0' wrap>
           <CourseCard
             image={require('@/assets/images/backendcourse.png')}
             name='Backend development'
@@ -107,11 +123,29 @@ const Edutech = () => {
       </Container>
 
       <Container maxWidth='xl' className='flex flex-col my-[100px] '>
-        <Flex justify={'space-evenly'} className='mx-auto' wrap>
-          <TestimonyCard person={'Faysal Bakre'} position={'Chief Chairman of Google'} text={'Mahorix fit us like a glove. Their team curates fresh, up-to-date Content from their marketplace and makes them available to customers.'} />
-          <TestimonyCard person={'James Daniel'} position={'CEO of Microsoft'} text={'Mahorix responds to the needs of the business in an agile and global manner. It’s truly the best solution for our employees and their careers.'} />
-          <TestimonyCard person={'Steves Harvey'} position={'Chief Executive Officer of Netflix'} text={'In total, it was a big success, I would get emails about what a fantastic resource it was.'} />
+        <Flex justify='space-between' className='!my-[60px]'>
+          <Text className='uppercase' type='h4'>Testimonials</Text>
         </Flex>
+        {/* <Flex justify={'space-evenly'} className='mx-auto' wrap> */}
+          <Slider
+            {...settings}
+            slidesToShow={2}
+            slidesToScroll={1}
+          >
+            <div className='!flex !items-center !justify-center'>
+              <TestimonyCard person={'Faysal Bakre'} position={'Chief Chairman of Google'} text={'Mahorix fit us like a glove. Their team curates fresh, up-to-date Content from their marketplace and makes them available to customers.'} />
+            </div>
+            <div className='!flex !items-center !justify-center'>
+              <TestimonyCard person={'James Daniel'} position={'CEO of Microsoft'} text={'Mahorix responds to the needs of the business in an agile and global manner. It’s truly the best solution for our employees and their careers.'} />
+            </div>
+            <div className='!flex !items-center !justify-center'>
+              <TestimonyCard person={'Steves Harvey'} position={'Chief Executive Officer of Netflix'} text={'In total, it was a big success, I would get emails about what a fantastic resource it was.'} />
+            </div>
+          </Slider>
+          {/* <TestimonyCard person={'Faysal Bakre'} position={'Chief Chairman of Google'} text={'Mahorix fit us like a glove. Their team curates fresh, up-to-date Content from their marketplace and makes them available to customers.'} />
+          <TestimonyCard person={'James Daniel'} position={'CEO of Microsoft'} text={'Mahorix responds to the needs of the business in an agile and global manner. It’s truly the best solution for our employees and their careers.'} />
+          <TestimonyCard person={'Steves Harvey'} position={'Chief Executive Officer of Netflix'} text={'In total, it was a big success, I would get emails about what a fantastic resource it was.'} /> */}
+        {/* </Flex> */}
       </Container>
       {/* <Container maxWidth='xl' className='my-[100px] '>
         <Flex gap={"40px"} align='center' wrap>
@@ -175,7 +209,9 @@ const Edutech = () => {
           </Flex>
         </Flex>
       </Container> */}
-      <Box className={styles.findout}>
+
+
+      {/* <Box className={styles.findout}>
         <Text type='h1' lh='65px' className='capitalize'>
           Find out about the latest courses with the <br />
           <span className='text-[#5A69F2]'>
@@ -187,7 +223,7 @@ const Edutech = () => {
             SUBMIT
           </Button>
         </div>
-      </Box>
+      </Box> */}
     </Layout>
   )
 }

@@ -74,16 +74,16 @@ const Footer = () => {
           </div>
         </div>
         <div className={styles.subscribe}>
-          <div className='w-[80%] flex flex-col gap-3 h-[85%] items-start justify-center'>
+          <div className='w-[80%] flex flex-col gap-[40px] h-[85%] items-start justify-center'>
             <Text color={colors.secondary1} type='h5'>
-              Subscribe
+              Why Mahorix?
             </Text>
-            <div className={styles.subscribeEmail}>
+            {/* <div className={styles.subscribeEmail}>
               <input type='email' placeholder='Email address' />
               <Button r='30px' btnColor={colors.secondary1}>
                 <ArrowForward />
               </Button>
-            </div>
+            </div> */}
             <Text type='body2' color={colors.grey}>
               Hello, we are MAHORIX Technologies. Our <br />
               goal is to translate the positive effects <br />

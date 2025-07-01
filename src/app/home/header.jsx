@@ -20,7 +20,7 @@ const Header = () => {
           Innovating with Purpose. <br /> Empowering with Passion. <br />
           Delivering purpose-led innovations and <br /> people-focused solutions
         </Text>
-        <Button width='142px' height='52px' className='mb-5' to="/contact-us">
+        <Button width='142px' height='52px' className='mb-5' to="/about-us">
           Get Started
         </Button>
       </div>
