@@ -60,6 +60,12 @@ const ItSolutions = () => {
             businesses to navigate and thrive in the evolving digital
             landscape."
           </Text>
+          <Box component={'a'} target="_blank" href='https://docs.google.com/forms/d/e/1FAIpQLSe39mCesA1HvwzuzBF3WJAhkLxc_j7AUCuGxmVbJ6rovgfCqA/viewform?usp=dialog' className="flex gap-4 items-center mt-[40px] cursor-pointer">
+            <Text  className="!cursor-pointer">
+              Tell us about your project
+            </Text>
+            <FaArrowRightLong color="black" />
+          </Box>
         </Box>
 
         <Image
