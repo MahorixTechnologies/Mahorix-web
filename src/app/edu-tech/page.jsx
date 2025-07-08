@@ -13,6 +13,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useDeviceSize } from '@/hooks'
+import WebinarAd from './webinar'
 
 
 const TestimonyCard = ({
@@ -50,6 +51,7 @@ const Edutech = () => {
   };
   return (
     <Layout >
+
       <Container maxWidth='xl' justify='space-between' wrap component={Flex} align='center' sx={{ my: { xs: '100px', lg: 0 }, gap: { xs: "50px" } }} className='min-h-[300px]'>
         <div className='flex flex-col gap-[60px] mx-auto'>
           <Text type='h1' lh='60px' className='max-w-[600px]'>
@@ -66,6 +68,7 @@ const Edutech = () => {
         </div>
         <Image src={require('@/assets/images/edutechheader.png')} />
       </Container>
+            <WebinarAd />
       {/* <Box className='flex justify-center text-center my-5 '>
         <Text type='h1' className='capitalize' align='center' lh='50px'>
           Search Among <span className='text-[#00AEEF]'>6</span> courses and <br />find your favorite course
