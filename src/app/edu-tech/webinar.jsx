@@ -12,7 +12,7 @@ export default function WebinarAd() {
       <p className="font-semibold text-yellow-300 mb-6">
         Date: July 26th, 2025 &nbsp; | &nbsp; 🕒 Time: 4PM (WAT)
       </p>
-      <Link href="https://bit.ly/mahorix" target='_blank' passHref>
+      <Link href="https://docs.google.com/forms/d/e/1FAIpQLSehgBn2S7GnF0stc4KsAX0TdZ0LXMPwco7ltE15jnG4HvlwrA/viewform" target='_blank' passHref>
         <button className="bg-white text-indigo-700 font-semibold px-6 py-3 rounded-full hover:bg-yellow-300 hover:text-black transition duration-300">
           Reserve Your Spot Now
         </button>
