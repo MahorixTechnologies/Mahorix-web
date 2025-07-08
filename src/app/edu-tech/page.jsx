@@ -5,7 +5,7 @@ import { Layout } from '@/partials'
 import { Box, Card, Container } from '@mui/material'
 import { Flex } from 'antd'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BsChevronRight } from 'react-icons/bs'
 import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
 import styles from './edutech.module.scss'
@@ -14,12 +14,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useDeviceSize } from '@/hooks'
 import WebinarAd from './webinar'
+import Link from 'next/link';
 
 
 const TestimonyCard = ({
   text, person, position
 }) => {
-  return (<Box sx={{ width: '100%', mx:'20px' }}>
+  return (<Box sx={{ width: '100%', mx: '20px' }}>
     <Box sx={{ bgcolor: '#F5F7FA', height: '280px' }} className='flex flex-col gap-[20px] justify-center p-[40px]'>
       <div className='flex '>
         <ImQuotesLeft color={colors.secondary1} size={40} />
@@ -40,15 +41,26 @@ const TestimonyCard = ({
 }
 
 const Edutech = () => {
-
-
   const { isMobile, width } = useDeviceSize();
   const scrollToRef = React.useRef(null)
+  const webinarRef = React.useRef(null);
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
   };
+  // const scrollToElement = (id) => {
+  //   const element = document.getElementById(id);
+  //   if (element) {
+  //     window.scrollTo({
+  //       top: element.offsetTop,
+  //       behavior: 'smooth' // Optional: for smooth scrolling animation
+  //     });
+  //   }
+  // };
+  useEffect(() => {
+     window.scrollTo({ top: webinarRef.current?.offsetTop, behavior: 'smooth' })
+  }, [])
   return (
     <Layout >
 
@@ -68,7 +80,20 @@ const Edutech = () => {
         </div>
         <Image src={require('@/assets/images/edutechheader.png')} />
       </Container>
-            <WebinarAd />
+      <section ref={webinarRef} id='webinar' className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-12 px-6 rounded-2xl shadow-xl mx-auto my-10 text-center  !m-3">
+        <h2 className="text-3xl font-bold mb-4"> Join Our Free Tech Training Webinar!</h2>
+        <p className="text-lg mb-6">
+          Level up your skills in Web Development, AI, and Cloud Computing. Learn from industry experts and get real-world insights.
+        </p>
+        <p className="font-semibold text-yellow-300 mb-6">
+          Date: July 26th, 2025 &nbsp; | &nbsp; 🕒 Time: 12PM (WAT)
+        </p>
+        <Link href="https://docs.google.com/forms/d/e/1FAIpQLSehgBn2S7GnF0stc4KsAX0TdZ0LXMPwco7ltE15jnG4HvlwrA/viewform" target='_blank' passHref>
+          <button className="bg-white text-indigo-700 font-semibold px-6 py-3 rounded-full hover:bg-yellow-300 hover:text-black transition duration-300">
+            Reserve Your Spot Now
+          </button>
+        </Link>
+      </section>
       {/* <Box className='flex justify-center text-center my-5 '>
         <Text type='h1' className='capitalize' align='center' lh='50px'>
           Search Among <span className='text-[#00AEEF]'>6</span> courses and <br />find your favorite course
@@ -130,22 +155,22 @@ const Edutech = () => {
           <Text className='uppercase' type='h4'>Testimonials</Text>
         </Flex>
         {/* <Flex justify={'space-evenly'} className='mx-auto' wrap> */}
-          <Slider
-            {...settings}
-            slidesToShow={2}
-            slidesToScroll={1}
-          >
-            <div className='!flex !items-center !justify-center'>
-              <TestimonyCard person={'Faysal Bakre'} position={'Chief Chairman of Google'} text={'Mahorix fit us like a glove. Their team curates fresh, up-to-date Content from their marketplace and makes them available to customers.'} />
-            </div>
-            <div className='!flex !items-center !justify-center'>
-              <TestimonyCard person={'James Daniel'} position={'CEO of Microsoft'} text={'Mahorix responds to the needs of the business in an agile and global manner. It’s truly the best solution for our employees and their careers.'} />
-            </div>
-            <div className='!flex !items-center !justify-center'>
-              <TestimonyCard person={'Steves Harvey'} position={'Chief Executive Officer of Netflix'} text={'In total, it was a big success, I would get emails about what a fantastic resource it was.'} />
-            </div>
-          </Slider>
-          {/* <TestimonyCard person={'Faysal Bakre'} position={'Chief Chairman of Google'} text={'Mahorix fit us like a glove. Their team curates fresh, up-to-date Content from their marketplace and makes them available to customers.'} />
+        <Slider
+          {...settings}
+          slidesToShow={2}
+          slidesToScroll={1}
+        >
+          <div className='!flex !items-center !justify-center'>
+            <TestimonyCard person={'Faysal Bakre'} position={'Chief Chairman of Google'} text={'Mahorix fit us like a glove. Their team curates fresh, up-to-date Content from their marketplace and makes them available to customers.'} />
+          </div>
+          <div className='!flex !items-center !justify-center'>
+            <TestimonyCard person={'James Daniel'} position={'CEO of Microsoft'} text={'Mahorix responds to the needs of the business in an agile and global manner. It’s truly the best solution for our employees and their careers.'} />
+          </div>
+          <div className='!flex !items-center !justify-center'>
+            <TestimonyCard person={'Steves Harvey'} position={'Chief Executive Officer of Netflix'} text={'In total, it was a big success, I would get emails about what a fantastic resource it was.'} />
+          </div>
+        </Slider>
+        {/* <TestimonyCard person={'Faysal Bakre'} position={'Chief Chairman of Google'} text={'Mahorix fit us like a glove. Their team curates fresh, up-to-date Content from their marketplace and makes them available to customers.'} />
           <TestimonyCard person={'James Daniel'} position={'CEO of Microsoft'} text={'Mahorix responds to the needs of the business in an agile and global manner. It’s truly the best solution for our employees and their careers.'} />
           <TestimonyCard person={'Steves Harvey'} position={'Chief Executive Officer of Netflix'} text={'In total, it was a big success, I would get emails about what a fantastic resource it was.'} /> */}
         {/* </Flex> */}

@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function WebinarAd() {
   return (
-    <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-12 px-6 rounded-2xl shadow-xl mx-auto my-10 text-center  !m-3">
+    <section id='webinar' className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-12 px-6 rounded-2xl shadow-xl mx-auto my-10 text-center  !m-3">
       <h2 className="text-3xl font-bold mb-4"> Join Our Free Tech Training Webinar!</h2>
       <p className="text-lg mb-6">
         Level up your skills in Web Development, AI, and Cloud Computing. Learn from industry experts and get real-world insights.
