@@ -41,7 +41,12 @@ export const Button = ({
     }, [btnColor, disabled, outlined, contained])
     const click = () => {
         onClick()
-        if (to) router.push(to)
+        if (!to) return
+        if (to.startsWith('http://') || to.startsWith('https://') || to.startsWith('mailto:')) {
+            window.location.href = to
+            return
+        }
+        router.push(to)
     }
 
 
